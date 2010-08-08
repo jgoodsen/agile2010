@@ -8,3 +8,13 @@ object Square {
   case Square(side) => side*side
   case _ => -1
 }
+
+def usePersonas(arr: String*) = {..}
+
+usePersonas("jane") // sweet
+usePersonas("joe", "eric") // sweet
+
+Without varargs:
+
+def useUglePersonas(arr: Array[String]) = {...}
+useUglyPersonas(Array("joe", "eric")) // ugly
