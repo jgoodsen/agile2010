@@ -18,3 +18,17 @@ Without varargs:
 
 def useUglePersonas(arr: Array[String]) = {...}
 useUglyPersonas(Array("joe", "eric")) // ugly
+
+object Join {
+	def apply(l: String*) = l.mkString(",")
+	def unapplySeq(s: String) = Some(s.split(","))
+}
+Join("1", "2", "3") match {
+	case Join("1", _*) => println("starts with 1")
+	case _ => println("doesn't start with 1")
+}
+
+case class Square(side: Int)
+val s = Square(2) // apply() is defined
+s.side => 2 // member is exported
+val Square(x) = s // uapply() is defined
