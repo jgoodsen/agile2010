@@ -29,6 +29,4 @@ def filter(inLst:List[Int],cond:(Int)=>Boolean):List[Int]={
 }
 def isodd(v:Int)= v%2==1
 filter(l,isodd)  // produces List(1, 7, 5, 3, 9)
-
-res23: List[Int] = List(1, 7, 5, 3, 9)
-filter(lst,(v:Int)=> v%2==0) // equivalent to the line above
+filter(lst,(v:Int) => v%2 == 0) // equivalent to the line above
