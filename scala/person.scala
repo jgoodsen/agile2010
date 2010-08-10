@@ -1,0 +1,1 @@
+class Person(val name : String, protected var _size : Int, assoc)

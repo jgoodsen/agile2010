@@ -18,6 +18,17 @@ salariedEmployee.name
 salariedEmployee.ssn
 
 
+var x = new Array[String]()
 
-		
 
+val l=List(1,7,2,8,5,6,3,9,14,12,4,10)
+def filter(inLst:List[Int],cond:(Int)=>Boolean):List[Int]={
+  if(inLst==Nil) Nil
+  else if(cond(inLst.head)) inLst.head::filter(inLst.tail,cond)
+  else filter(inLst.tail,cond)
+}
+def isodd(v:Int)= v%2==1
+filter(l,isodd)  // produces List(1, 7, 5, 3, 9)
+
+res23: List[Int] = List(1, 7, 5, 3, 9)
+filter(lst,(v:Int)=> v%2==0) // equivalent to the line above
